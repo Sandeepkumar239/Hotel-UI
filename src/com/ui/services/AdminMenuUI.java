@@ -7,7 +7,9 @@ public class AdminMenuUI implements DisplayMenu{
     private int choice;
     @Override
     public void displayMenu(){
-        System.out.println("Admin Menu");
+        System.out.println("================================================");
+        System.out.println("                 Admin Menu");
+        System.out.println("================================================\n");
         System.out.println("1. Book a Room");
         System.out.println("2. Check Availabilty");
         System.out.println("3. CheckIn Customer");
@@ -18,8 +20,15 @@ public class AdminMenuUI implements DisplayMenu{
     @Override
     public int getChoice(Scanner scanner)
     {
+        System.out.println("Enter your choice : ");
         this.choice = scanner.nextInt();
-        return this.choice;
+        if(this.choice>=1 && this.choice<=6) {
+            return this.choice;
+        }
+        else{
+            System.out.println("Invalid choice.\nRe-enter valid choice");
+            return getChoice(scanner);
+        }
     }
 
 }

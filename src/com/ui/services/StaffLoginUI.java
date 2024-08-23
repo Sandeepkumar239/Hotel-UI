@@ -8,7 +8,7 @@ public class StaffLoginUI implements LoginUser {
     private String username;
     private String password;
     @Override
-    public void loginRequester(){
+    public int loginRequester(){
         System.out.println("==================================");
         System.out.println("         Staff Login");
         System.out.println("==================================");
@@ -18,10 +18,11 @@ public class StaffLoginUI implements LoginUser {
             System.out.println("No console available");
             System.exit(1);
         }
-        System.out.println("Username : ");
+        System.out.println("Enter Username : ");
         username = scanner.nextLine();
         String password = PasswordMasker.readPassword(console, "Enter your password: ");
 
         //Call Staff login method;
+        return 1;
     }
 }

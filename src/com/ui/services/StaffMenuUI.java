@@ -13,6 +13,10 @@ public class StaffMenuUI implements DisplayMenu{
     @Override
     public int getChoice(Scanner scanner){
         this.choice = scanner.nextInt();
+        if(choice!=1 && choice!=2){
+            System.out.println("Enter a valid choice ");
+            return getChoice(scanner);
+        }
         return this.choice;
     }
 }
